@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 export default function Dashboard() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [isInventarioOpen, setIsInventarioOpen] = useState(false);
+
   return (
     <>
       <Head>
@@ -19,7 +20,9 @@ export default function Dashboard() {
       </Head>
 
       <div
-        className={`flex h-screen ${sidebarCollapsed ? "overflow-hidden" : ""} bg-gray-100`}
+        className={`flex h-screen ${
+          sidebarCollapsed ? "overflow-hidden" : ""
+        } bg-gray-100`}
       >
         {/* Sidebar */}
         <motion.div
@@ -43,15 +46,19 @@ export default function Dashboard() {
                 onClick={() => setIsInventarioOpen(!isInventarioOpen)}
               >
                 <div className="flex items-center">
-                  <i className="fas fa-tachometer-alt mr-2"></i>
+                  <i className="fas fa-tachometer-alt mr-2"></i> 
                   <span
-                    className={`${sidebarCollapsed ? "hidden" : "block"} text-sm font-medium`}
+                    className={`${
+                      sidebarCollapsed ? "hidden" : "block"
+                    } text-sm font-medium`}
                   >
                     Inventario
                   </span>
                 </div>
                 <i
-                  className={`fas ${isInventarioOpen ? "fa-chevron-up" : "fa-chevron-down"}`}
+                  className={`fas ${
+                    isInventarioOpen ? "fa-chevron-up" : "fa-chevron-down"
+                  }`}
                 ></i>
               </button>
 
@@ -89,7 +96,9 @@ export default function Dashboard() {
               >
                 <i className="fas fa-columns mr-2"></i>
                 <span
-                  className={`${sidebarCollapsed ? "hidden" : "block"} text-sm font-medium`}
+                  className={`${
+                    sidebarCollapsed ? "hidden" : "block"
+                  } text-sm font-medium`}
                 >
                   Layouts
                 </span>
