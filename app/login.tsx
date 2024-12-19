@@ -1,4 +1,4 @@
-// pages/login.js
+// pages/login.tsx
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
@@ -8,15 +8,15 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const router = useRouter();
+  const router = useRouter(); // Aquí usamos router
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
+    setError(""); // Limpiamos el error previo
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      router.push("/dashboard"); // Redirige después de iniciar sesión
+      router.push("/dashboard"); // Redirige a dashboard después de iniciar sesión
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message); // Muestra el mensaje de error
@@ -25,7 +25,6 @@ export default function LoginPage() {
       }
     }
   };
-      
 
   return (
     <div>
