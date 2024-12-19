@@ -2,13 +2,10 @@
 import Head from "next/head";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useRouter } from "next/router"; // No es necesario almacenar router en el estado
 
 export default function Dashboard() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [isInventarioOpen, setIsInventarioOpen] = useState(false);
-  const router = useRouter(); // Directamente usa useRouter
-
   return (
     <>
       <Head>
